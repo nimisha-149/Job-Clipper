@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job Clipper Board</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6fb;color:#17213b;font:15px Arial,sans-serif}
+header{background:linear-gradient(120deg,#243b83,#6177df);color:white;padding:25px max(22px,calc((100% - 1200px)/2))}
+header h1{margin:0 0 6px}header p{margin:0;opacity:.85}
+main{max-width:1200px;margin:24px auto;padding:0 18px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}input,select,button{font:inherit;border-radius:9px;padding:10px;border:1px solid #d4dbea}
+#search{flex:1;min-width:210px}button{background:#4059c8;color:white;border:0;font-weight:700;cursor:pointer}
+.board{display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:14px;align-items:start}
+.lane{background:#e9edf7;border-radius:14px;padding:12px;min-height:300px}.lane h3{margin:4px 3px 12px}.count{color:#66718a;font-size:12px}
+.card{background:white;border-radius:12px;padding:13px;margin:9px 0;box-shadow:0 2px 8px #243b8310;cursor:grab}
+.card h4{margin:0 0 6px}.company{color:#4059c8;font-weight:700}.meta{font-size:12px;color:#68748d;margin:8px 0;overflow-wrap:anywhere}
+.card a{color:#4059c8;font-size:12px}.actions{display:flex;gap:6px;margin-top:9px}.actions button{font-size:11px;padding:7px}.actions .edit{background:#e7ebff;color:#3049ad}.actions .del{background:#ffe8e8;color:#a52b2b}
+.empty{color:#8490a8;font-size:13px;padding:12px 4px}.note{width:100%;margin-top:7px}
+@media(max-width:900px){.board{grid-template-columns:repeat(2,minmax(220px,1fr))}}@media(max-width:520px){.board{grid-template-columns:1fr}}
+</style></head><body>
+<header><h1>Job Clipper</h1><p>Your internship and job applications, organised in one place.</p></header>
+<main><div class="toolbar"><input id="search" placeholder="Search role or company..."><button id="export">Export CSV</button><button id="add">Add job manually</button></div><div class="board" id="board"></div></main>
+<script src="dashboard.js"></script></body></html>
